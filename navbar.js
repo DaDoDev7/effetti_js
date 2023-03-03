@@ -9,7 +9,7 @@ window.addEventListener("scroll", function(){
   var scrolled = window.scrollY;
   if(scrolled >= halfWindow) {
     headerNav.classList.add('active');
-    // console.log("coucuo");
+   
   } else {
     headerNav.classList.remove('active');
   }
