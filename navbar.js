@@ -16,7 +16,7 @@ window.addEventListener("scroll", function(){
   lastScroll = scrolled;
 });
 
-//evento di scroll sulla finestra che considera come variabili scrollable e scrolled
+//Evento di scroll sulla finestra che considera come variabili scrollable e scrolled
 
 window.addEventListener('scroll', () => {
 
@@ -31,3 +31,20 @@ window.addEventListener('scroll', () => {
   //mettere  condizioni qui :D
   
   )}
+
+// Come assegnare la classe di un oggetto (in questo caso una sottolineatura) a un .nav-link con lo stesso indirizzo della pagina
+
+//CSS
+                        
+.nav-link[aria-current="page"] {
+  text-decoration: underline wavy #f8c348 0.15rem;
+  text-underline-offset: 0.5rem;
+}
+
+//javascript
+
+document.querySelectorAll('.nav-link').forEach(link => {
+  if(link.href === window.location.href){
+    link.setAttribute('aria-current', 'page')
+  }
+})
