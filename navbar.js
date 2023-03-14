@@ -15,3 +15,19 @@ window.addEventListener("scroll", function(){
   }
   lastScroll = scrolled;
 });
+
+//evento di scroll sulla finestra che considera come variabili scrollable e scrolled
+
+window.addEventListener('scroll', () => {
+
+// scrolled è il punto sul quale siamo con lo scroll attuale sulla finestra , e varia allo scroll
+  
+  var scrolled = window.scrollY;
+
+  // scrollable è l'ammontare totale dello spazio scrollabile del documento . praticamente è il punto massimo di scrollY.
+  
+  var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  
+  //mettere  condizioni qui :D
+  
+  )}
