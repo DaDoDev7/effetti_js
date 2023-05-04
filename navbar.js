@@ -48,3 +48,28 @@ document.querySelectorAll('.nav-link').forEach(link => {
     link.setAttribute('aria-current', 'page')
   }
 })
+
+
+// elementi della navbar che cambiano allo scroll . una sorta di breadcrumb per evidenziare i navlinks di una navbar.
+
+window.addEventListener('scroll', function() {
+  var cardItems = document.querySelectorAll('.card');
+  var navLinks = document.querySelectorAll('.navlinks');
+  var currentCardIndex = 0;
+  
+  // determina l'indice dell'ultima carta visibile
+  for (var i = 0; i < cardItems.length; i++) {
+    var bounding = cardItems[i].getBoundingClientRect();
+    if (bounding.top <= window.innerHeight && bounding.bottom >= 0) {
+      currentCardIndex = i;
+    }
+  }
+  
+  // rimuovi la classe 'darken' da tutte le navlinks
+  for (var i = 0; i < navLinks.length; i++) {
+    navLinks[i].classList.remove('darken');
+  }
+  
+  // aggiungi la classe 'darken' all'elemento di navigazione corrispondente all'ultima carta visibile
+  navLinks[currentCardIndex].classList.add('darken');
+});
